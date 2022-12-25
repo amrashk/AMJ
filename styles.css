@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.hero {
+  /* height: 100vh; */
+  width: 100%;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+nav {
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: space-around;
+  /* padding-top: 1%; */
+  padding-left: 8%;
+  padding-right: 8%;
+  /* padding-bottom: 2%; */
+}
+.logo {
+  height: 10%;
+  width: auto;
+  margin: 0;
+  padding: 10px;
+}
+.logo img {
+  height: 80px;
+}
+nav ul li {
+  border: 1px solid transparent;
+  border-radius: 30px;
+  border-color: #abb2b9;
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 25px;
+}
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+nav ul :hover {
+  background-color: #16a085;
+  color: #fff;
+  transition: 0.4s;
+}
+.btn {
+  border: 1px solid transparent;
+  border-radius: 30px;
+  border-color: #abb2b9;
+  background-color: #fff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 25px;
+  transition: transform 0.4s;
+}
+.btn:hover {
+  background-color: #16a085;
+  transition: 0.4s;
+}
+.btn:hover a {
+  color: #fff;
+  transition: 0.4s;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+.profile img {
+  height: 80px;
+}
+.profile a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.attractive-img {
+  display: flex;
+  padding-top: 25%;
+  padding-left: 10%;
+  /* justify-content: center; */
+  background-color: rgb(158, 198, 166);
+  background-image: url(https://blog.edmentum.com/sites/blog.edmentum.com/files/styles/blog_image/public/images/Foreign.jpg?itok=J9g36xaV);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+.attractive-img img {
+}
