@@ -1,0 +1,50 @@
+{
+    "schools": {
+        "Korea": [
+            {
+                "sur_name": "Hanseo University",
+                "students": "1000",
+                "rank": "689",
+                "place": "Sosan",
+                "top": true
+            },
+            {
+                "sur_name": "Hanseo University",
+                "students": "1000",
+                "rank": "689",
+                "place": "Sosan",
+                "top": false
+            },
+            {
+                "sur_name": "Hanseo University",
+                "students": "1000",
+                "rank": "689",
+                "place": "Sosan",
+                "top": true
+            },
+            {
+                "sur_name": "Hanseo University",
+                "students": "1000",
+                "rank": "689",
+                "place": "Sosan",
+                "top": true
+            }
+        ],
+        "USA": [
+            {
+                "sur_name": "Charles Sturt University",
+                "students": "899",
+                "rank": "678",
+                "place": "Ohio",
+                "top": true
+            },
+            {
+                "sur_name": "Charles Sturt University",
+                "students": "899",
+                "rank": "678",
+                "place": "Ohio",
+                "top": true
+            }
+        ]
+    }
+}
