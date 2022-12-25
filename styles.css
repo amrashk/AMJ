@@ -6,12 +6,15 @@
 }
 
 .hero {
-  /* height: 100vh; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: #fff;
   background-size: cover;
   background-position: center;
 }
+
 nav {
   display: flex;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
