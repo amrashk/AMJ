@@ -105,10 +105,26 @@ nav ul :hover {
   padding-left: 10%;
   /* justify-content: center; */
   background-color: rgb(158, 198, 166);
-  background-image: url(https://blog.edmentum.com/sites/blog.edmentum.com/files/styles/blog_image/public/images/Foreign.jpg?itok=J9g36xaV);
+  background-image: url(./assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   height: 100vh;
 }
-.attractive-img img {
+.bg-pic {
+  background-image: url(./assets/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: gray;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-align: center;
 }
