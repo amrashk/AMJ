@@ -558,3 +558,82 @@ nav ul :hover {
 .lg-font{
   font-size: 22px;
 }
+
+.bgcolor{
+  background-color: #eff4ff;
+}
+
+/* profile card */
+
+.gridbro{
+  display: grid;
+  height: 100%;
+  place-items: center;  
+}
+.container{
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.container .box{
+  width: calc(20% - 10px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 5px;
+  min-height: 480px;
+}
+.box .quote i{
+margin-top: 10px;
+font-size: 45px;
+color: #17c0eb
+}
+.container .box .image{
+  margin: 10px 0;
+  height: 150px;
+  width: 150px;
+  background: #8e44ad;
+  padding: 3px;
+  border-radius: 50%;
+}
+.box .image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.box p{
+  text-align: justify;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.box .name_job{
+  margin: 10px 0 3px 0;
+  color: #8e44ad;
+  font-size: 18px;
+  font-weight: 600;
+}
+.rating i{
+  font-size: 18px;
+  color: #8e44ad;
+  margin-bottom: 5px;
+}
+@media (max-width:1045px){
+  .container .box{
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width:710px){
+  .container .box{
+    width: 100%;
+  }
+}
