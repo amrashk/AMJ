@@ -642,3 +642,25 @@ color: #17c0eb
 .containerr{
   max-width: 1200px;
 }
+
+.centertext{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.colorful-bg {
+  /* background-clip: text;
+  -webkit-background-clip: text; */
+  background-image: linear-gradient(
+    360deg,
+    #55D440,
+    #75DC64,
+    #9DE691,
+    #B8EDAF,
+    #CDF2C7,
+    #eff4ff
+  );
+  
+  /* -webkit-text-fill-color: transparent; */
+}
