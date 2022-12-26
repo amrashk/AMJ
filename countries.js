@@ -24,10 +24,12 @@ class TopTour {
     }
 
     Download(targetElement , id) {
+        console.log(id);
         fetch(`${this._tourUrl}/latest`)
             .then(result => {
                 result.json().then(jsob => {
                     // filter
+                            
                             const filteredTour = jsob.record.schools[id].filter(filter => filter.top );
                             console.log(filteredTour);
                             gebi(targetElement).insertAdjacentHTML("afterbegin", filteredTour.map(map => {
@@ -58,27 +60,23 @@ class country  {
     }
 
     render() {
-        return `<article>
+        return `<article >
         // ${this.c_name}
         <br>
         // ${this.rank}
         <br>
         // ${this.details}
-        <button>readmore</button>
+        <button role="button" class = "${this.id}" onclick="someFunction(this)">readmore</button>
         <br><br>
     </article>`;
 
     }
-    connectedCallback() {
-        this.querySelector("button").addEventListener("click", () => {
-            // myCart.AddToCart(this);
-            const tours = new TopTour("https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8");
-            tours.Download("articles_top", this.id);
-            // myCart.color = "#0f0";
-        })
-    }
 };
-
+function someFunction(obj,abc) {
+    alert(obj.className);
+    const tours = new TopTour("https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8");
+    tours.Download("articles_top", obj.className);
+}
 class countryies {
     constructor(tourUrl) {
         this._tourUrl = tourUrl;
@@ -115,9 +113,7 @@ class countryies {
 };
 
 const gebi = id => document.getElementById(id);
-// const tours = new TopTour("https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8");
 
-// tours.Download("articles_top");
 const countrs = new countryies("https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8");
 // names = Object.getOwnPropertyNames(countrs);
 // alert(names[0]); // alerts "myArray"
