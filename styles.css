@@ -404,6 +404,7 @@ nav ul :hover {
 }
 
 .whyedu {
+  margin:auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -636,4 +637,8 @@ color: #17c0eb
   .container .box{
     width: 100%;
   }
+}
+
+.containerr{
+  max-width: 1200px;
 }
