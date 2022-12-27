@@ -650,7 +650,8 @@ nav ul :hover {
 .centertext {
   text-align: center;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
 }
 
 .colorful-bg {
