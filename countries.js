@@ -8,13 +8,15 @@ class Tour {
     }
 
     render() {
-        return `<article>
+        return `
+        <article>
         // ${this.sur_name}
         // ${this.students}
         // ${this.rank}
         // ${this.place}
+        
     </article>`;
-
+        
     }
 };
 
@@ -60,15 +62,25 @@ class country  {
     }
 
     render() {
-        return `<article >
-        // ${this.c_name}
-        <br>
-        // ${this.rank}
-        <br>
-        // ${this.details}
-        <button role="button" class = "${this.id}" onclick="someFunction(this)">readmore</button>
-        <br><br>
-    </article>`;
+        return `
+
+
+        <section>
+            <div class="card">
+                <div class="thumb"></div>
+                <div class="infos">
+                <h2 class="titles"> ${this.c_name}<span class="flag"></span></h2>
+                <h3 class="date">Rank: ${this.rank}</h3>
+                <p class="txt">
+                    ${this.details}
+                </p>
+                <div>
+                    <button role="button" class = "${this.id}" onclick="someFunction(this)">readmore</button>
+                    <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
+                </div>
+                </div>
+            </div>
+        </section> `;
 
     }
 };
