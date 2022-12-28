@@ -757,7 +757,7 @@ nav ul :hover {
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #707070;
+  text-decoration: underline;
 }
 
 .icon:hover{
@@ -774,7 +774,7 @@ nav ul :hover {
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -784,7 +784,7 @@ nav ul :hover {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -804,3 +804,4 @@ nav ul :hover {
     text-align: left;
   }
 }
+
