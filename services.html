@@ -5,41 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="card2.css" />
     <script src="./schols.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <header class="hero" role="banner">
-      <nav>
-        <div class="logo">
-          <img
-            src="https://i1.wp.com/edulinellc.mn/wp-content/uploads/2021/02/Logo_2021.png?fit=50%2C46&ssl=1"
-            alt="" />
+    
+      <nav class="navbar-fixed">
+        <div class="topnav" id="myTopnav">
+          
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>  
+          <div class="logo">
+            <img
+              src="https://i1.wp.com/edulinellc.mn/wp-content/uploads/2021/02/Logo_2021.png?fit=50%2C46&ssl=1"
+              alt="" />
+          </div>
+          <a href="./home.html" class="active">НҮҮР</a>
+          <a href="./aboutus.html">СУРАЛЦАХ ОРНУУД</a>
+          <a href="./services.html">СУРГУУЛИУД</a>
+          <a href="./skills.html">ТЭТГЭЛЭГ</a>
+          <div class="dropdown">
+            <button href="./contactus.html" class="dropbtn">БУСАД 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">БАТАЛГААТ ОРЧУУЛГА</a>
+              <a href="#">ХЭЛНИЙ СУРГАЛТ</a>
+            </div>
+          </div>
+          <div class="user-cont">
+            <a href="/">НЭВТРЭХ</a>
+            <img class="user" src="./assets/icon/user.png"/>
+          
         </div>
-        <div>
-          <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="./aboutus.html">About Us</a></li>
-            <li><a href="./services.html">Services</a></li>
-            <li><a href="./skills.html">Skills</a></li>
-            <li><a href="./contactus.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="profile">
-          <a href="#" class="btn">Subscribe</a>
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt="" />
         </div>
       </nav>
-    </header>
-    <section>
-      <h1>Services</h1>
-    </section>
-    <div class="section">
-      <div class="articles" id="articles_top">
-        
+    
+    <!-- <section>
+      <div class="card">
+        <div class="infos">
+          <h2 class="titles">Hanseo University<span class="flag"></span></h2>
+          <h3 class="date">Оюутан: 1531</h3>
+          <h3 class="date">Rank: 892</h3>
+          <p class="txt">Байрлал Сосан</p>
+          <div>
+            <h3 class="details">ДЭЛГЭРЭНГҮЙ</h3>
+            <h3 class="details2">★</h3>
+          </div>
+        </div>
       </div>
-  </div>  
+    </section> -->
+    <div class="section">
+      <div class="articles" id="articles_top"></div>
+    </div>
   </body>
 </html>

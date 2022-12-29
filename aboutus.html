@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="card.css" />
     <script src="./countries.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <header class="hero" role="banner">
+    <nav class="navbar-fixed">
+      <div class="topnav" id="myTopnav">
+        
+        <a href="javascript:void(0);" style="font-size:18px;" class="icon" onclick="myFunction()">&#9776;</a>  
+        <div class="logo">
+          <img
+            src="https://i1.wp.com/edulinellc.mn/wp-content/uploads/2021/02/Logo_2021.png?fit=50%2C46&ssl=1"
+            alt="" />
+        </div>
+        <a href="./home.html" class="active">НҮҮР</a>
+        <a href="./aboutus.html">СУРАЛЦАХ ОРНУУД</a>
+        <a href="./services.html">СУРГУУЛИУД</a>
+        <a href="./skills.html">ТЭТГЭЛЭГ</a>
+        <div class="dropdown">
+          <button href="./contactus.html" class="dropbtn">БУСАД 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">БАТАЛГААТ ОРЧУУЛГА</a>
+            <a href="#">ХЭЛНИЙ СУРГАЛТ</a>
+          </div>
+        </div>
+        <div class="user-cont">
+          <a href="/">НЭВТРЭХ</a>
+          <img class="user" src="./assets/icon/user.png"/>
+        
+      </div>
+      </div>
+    </nav>
+    <!-- <header class="hero" role="banner">
       <nav>
         <div class="logo">
           <img
@@ -18,11 +48,11 @@
         </div>
         <div>
           <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="./aboutus.html">About Us</a></li>
-            <li><a href="./services.html">Services</a></li>
-            <li><a href="./skills.html">Skills</a></li>
-            <li><a href="./contactus.html">Contact Us</a></li>
+            <li><a href="./home.html">НҮҮР</a></li>
+            <li><a href="./aboutus.html">СУРАЛЦАХ ОРНУУД</a></li>
+            <li><a href="./services.html">СУРГУУЛИУД</a></li>
+            <li><a href="./skills.html">ТЭТГЭЛЭГ</a></li>
+            <li><a href="./contactus.html">БУСАД</a></li>
           </ul>
         </div>
         <div class="profile">
@@ -32,14 +62,145 @@
             alt="" />
         </div>
       </nav>
-    </header>
+    </header> -->
     <section>
-      <h1>ABOUTUS</h1>
-    </section>
-    <div class="section">
-      <div class="articles" id="articles_top">
-        
+      <div class="bg-pic">
+        <h1 class="title">
+          СУРАЛЦАХ ОРНУУД
+        </h1>
       </div>
-  </div>  
+    </section>
+    <section class="padding-bottom--lg">
+      <div>
+      <article>
+        <h1 class="title padding-vert--md colorful-word">ОНЦЛОГ</h1>
+      </article>
+      <div class="whyedu containerr">
+        <div class="whycard">          
+          <p class="boldtext">
+            Манай байгууллагын суралцагчидыг зуучилдаг улс орнууд маань дэлхийн боловсролын түвшинээрээ 60-д багтдаг.
+          </p>
+        </div>
+      </div>
+      <div>
+    </section>
+    <!-- <section>
+      <div class="card">
+        <div class="thumb"></div>
+        <div class="infos">
+          <h2 class="titles">new york city<span class="flag"></span></h2>
+          <h3 class="date">Rank: 1</h3>
+          <p class="txt">
+            Join us for our Live Infinity Session in beautiful New York City.
+            This is a 3 day intensive workshop where you'll learn how to become
+            a better version of...
+          </p>
+          <div>
+            <h3 class="details">СУРГУУЛИУД</h3>
+            <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <div id="articles_top">
+      <!-- <div class="articles" id="articles_top"></div> -->
+    </div>
   </body>
+  <footer class="colorful-bg">
+    <div class="padding-top--md">
+      <div>
+        <div class="whyedu containerr padding-top--md">
+          <div class="justflex">
+            <ul class="nodot">
+              <li class="justflex">
+                <a class="footerlink" href="./home.html">СУРАЛЦАХ ОРНУУД</a>
+              </li>
+              <li class="justflex">
+                <a class="footerlink" href="./aboutus.html">ХЭЛНИЙ СУРГАЛТ</a>
+              </li>
+              <li class="justflex">
+                <a class="footerlink" href="./services.html">СУРГУУЛИУД</a>
+              </li>
+              <li class="justflex">
+                <a class="footerlink" href="./skills.html">ТЭТГЭЛЭГ</a>
+              </li>
+              <li class="justflex">
+                <a class="footerlink" href="./contactus.html"
+                  >БАТАЛГААТ ОРЧУУЛГА</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="justflex">
+            <ul class="nodot footerlink">
+              <li class="justflex">
+                <img
+                  class="linkicon"
+                  src="./assets/icon/phone-call.png" />7011-0503, 11-320-535
+              </li>
+              <li class="justflex">
+                <img
+                  class="linkicon"
+                  src="./assets/icon/email.png" />info@edulinellc.mn
+              </li>
+              <li class="justflex">
+                <img
+                  class="linkicon"
+                  src="./assets/icon/facebook.png" />Edu-Line LLC
+              </li>
+              <li class="justflex">
+                <img
+                  class="linkicon"
+                  src="./assets/icon/instagram.png" />eduline_llc
+              </li>
+              <li class="justflex">
+                <img class="linkicon" src="./assets/icon/twitter.png" />Edu-Line
+                LLC
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  class="gmap_iframe"
+                  width="100%"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://maps.google.com/maps?width=500&amp;height=250&amp;hl=en&amp;q=eduline&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe
+                ><a href="https://www.gachacute.com/">www.gachacute.com</a>
+              </div>
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  width: 100%;
+                  height: 250px;
+                }
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  width: 100%;
+                  height: 250px;
+                }
+                .gmap_iframe {
+                  height: 250px !important;
+                }
+              </style>
+            </div>
+            <div class="justflex footerlink padding-top--xs">
+              <img class="linkicon" src="./assets/icon/gps.png" />
+              302, Delta Center, Khoroo 1, Chingeltei district,
+              <br />Ulaanbaatar 15170
+            </div>
+          </div>
+        </div>
+        <div class="padding-top--md centertext padding-bottom--xs">
+          © 2004-2021. Эдүлайн ХХК
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>

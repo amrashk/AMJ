@@ -8,13 +8,25 @@ class Tour {
     }
 
     render() {
-        return `<article>
-        
-        // ${this.sur_name}
-        // ${this.students}
-        // ${this.rank}
-        // ${this.place}
-    </article>`;
+        return `
+
+
+        <section>
+            <div class="card">
+                <div class="thumb"></div>
+                <div class="infos">
+                <h2 class="titles"> ${this.sur_name}<span class="flag"></span></h2>
+                <h3 class="date">Rank: ${this.rank}</h3>
+                <p class="txt">
+                    asdf
+                </p>
+                <div>
+                    <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
+                    <h3 class="details2">★</h3>
+                </div>
+                </div>
+            </div>
+        </section> `;
 
     }
 };

@@ -1,0 +1,88 @@
+.note {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Merriweather", sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+.card {
+  width: 350px;
+  height: 350px;
+  /* transform: translate(-50%, -50%) translateZ(0); */
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.card .infos {
+  width: auto;
+  height: 350px;
+  position: relative;
+  padding: 14px 24px;
+  background: #fff;
+}
+.card .infos .titles {
+  position: relative;
+  margin: 10px 0;
+  letter-spacing: 3px;
+  color: #152536;
+  font-family: "Grotesque Black", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 0px #32577f;
+}
+.card .infos .flag {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 23px;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/flag.png")
+    no-repeat top right;
+  background-size: 100% auto;
+  display: inline-block;
+}
+.card .infos .date {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: rgba(21, 37, 54, 0.7);
+  font-family: "Grotesque", sans-serif;
+}
+
+.card .infos .txt {
+  font-family: "Merriweather", sans-serif;
+  line-height: 2;
+  font-size: 0.95rem;
+  color: rgba(21, 37, 54, 0.7);
+}
+.card .infos .details {
+  position: absolute;
+  left: 0;
+  left: 0;
+  bottom: 0;
+  margin: 10px 0;
+  padding: 20px 24px;
+  letter-spacing: 1px;
+  color: #4e958b;
+  font-family: "Grotesque Black", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.card .infos .details2 {
+  position: absolute;
+  right: 0;
+  right: 0;
+  bottom: 0;
+  margin: 10px 0;
+  padding: 20px 24px;
+  letter-spacing: 1px;
+  color: #4e958b;
+  font-family: "Grotesque Black", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
