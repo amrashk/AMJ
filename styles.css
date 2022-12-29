@@ -819,7 +819,7 @@ nav ul :hover {
   display: block;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 830px){
   .logo{
     position: absolute;
     left: 35px;
@@ -832,7 +832,7 @@ nav ul :hover {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 830px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -842,7 +842,7 @@ nav ul :hover {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 830px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: relative;
