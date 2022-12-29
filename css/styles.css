@@ -380,13 +380,13 @@ nav ul :hover {
   padding-left: 10%;
   /* justify-content: center; */
   background-color: rgb(158, 198, 166);
-  background-image: url(./assets/bg.jpg);
+  background-image: url(../assets/bg.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   height: 100vh;
 }
 .bg-pic {
-  background-image: url(./assets/bg.jpg);
+  background-image: url(../assets/bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
