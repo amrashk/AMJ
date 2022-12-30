@@ -609,6 +609,7 @@ nav ul :hover {
   height: 100%;
   place-items: center;
 }
+
 .container {
   max-width: 1200px;
   display: flex;

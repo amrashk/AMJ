@@ -63,8 +63,6 @@ class country {
 
   render() {
     return `
-
-
         <section>
             <div class="card">
                 <div class="thumb"></div>
@@ -75,7 +73,7 @@ class country {
                     ${this.details}
                 </p>
                 <div>
-                    <button role="button" class = "details ${this.id}" onclick="someFunction(this)">readmore</button>
+                    <button role="button" id="${this.id}" class = "details" onclick="someFunction(this)">readmore</button>
                     <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
                 </div>
                 </div>
@@ -84,11 +82,11 @@ class country {
   }
 }
 function someFunction(obj, abc) {
-  alert(obj.className);
+  alert(obj.id);
   const tours = new TopTour(
     "https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8"
   );
-  tours.Download("articles_top", obj.className);
+  tours.Download("articles_top", obj.id);
 }
 class countryies {
   constructor(tourUrl) {
@@ -127,10 +125,7 @@ class countryies {
 }
 
 const gebi = (id) => document.getElementById(id);
-
 const countrs = new countryies(
   "https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8"
 );
-// names = Object.getOwnPropertyNames(countrs);
-// alert(names[0]); // alerts "myArray"
 countrs.Download("articles_top");
