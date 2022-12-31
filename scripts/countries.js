@@ -1,11 +1,9 @@
 console.log("start");
 const overlay = document.getElementById('overlay')
 function someFunction(obj) {
-
-const openModalButtons = document.getElementById(obj.id)
+const openModalButtons = document.getElementById(obj)
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const modalopen = document.querySelector(".modal");
-openModal(modalopen)
+openModal(openModalButtons)
 
 overlay.addEventListener('click', () => {
   const modals = document.querySelectorAll('.modal.active')
@@ -102,8 +100,9 @@ class country {
     return `
     
         <section>
-            <div class="modal" id="modal">
           
+            <div  class="modal" id="${this.rank}">
+              <div  class="${this.rank}" >
               <div class="modal-header">
                 <div class="title">${this.c_name}</div>
                 <button data-close-button class="close-button">&times;</button>
@@ -111,7 +110,7 @@ class country {
               <div id="${this.c_name}">
 
               </div>
-              
+              </div>
             </div>   
             <div class="card">
                 <div class="thumb"></div>
@@ -122,11 +121,13 @@ class country {
                     ${this.details}
                 </p>
                 <div>
-                    <button data-modal-target="#modal" role="button" id="${this.id}" class = "details" onclick="someFunction(this)">readmore</button>
+                    <button data-modal-target="#modal" role="button" id="${this.id}" class = "details" onclick="someFunction(${this.rank})">readmore</button>
                     <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
                 </div>
                 </div>
+               
             </div>
+         
         </section> 
 
         `;
