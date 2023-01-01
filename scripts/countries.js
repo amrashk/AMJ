@@ -1,5 +1,6 @@
 console.log("start");
 const overlay = document.getElementById('overlay')
+
 function someFunction(obj) {
 const openModalButtons = document.getElementById(obj)
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
