@@ -1,2 +1,2 @@
 # AMJ
-Web team project
+amrashk.github.io
