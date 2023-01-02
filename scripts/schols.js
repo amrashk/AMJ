@@ -33,7 +33,7 @@ function GetalldataOnce(targetElement){
             
         snapshot.forEach(childSnapshot =>{
                 students.push(childSnapshot.val());
-                // console.log(childSnapshot.val());
+                console.log(childSnapshot.val());
             })  
             for (var make in students) {
                 const filteredTour =students[make].filter((filter) => filter.top == true);
@@ -46,10 +46,10 @@ function GetalldataOnce(targetElement){
                     }
                 }
               }
-              printlist();
-            //   exp_ren += "</div>"
+            //   printlist();
+              exp_ren += "</div>"
                 console.log(list)
-            //   document.getElementById(targetElement).innerHTML = exp_ren;
+              document.getElementById(targetElement).innerHTML = exp_ren;
     })
 }   
 function App(arr, target){
@@ -86,11 +86,11 @@ function reload(_targetElement){
         this.access = 0;
         this.render = ()=>{
             return `
-        <exp-product-list 
-            sur_name = "${this.sur_name}"
-            rank = "${this.rank}" 
-            access = "${this.access}" 
-        </exp-product-list>
+            <exp-product-list 
+                sur_name = "${this.sur_name}"
+                rank = "${this.rank}" 
+                access = "${this.access}" 
+            </exp-product-list>
         `;
         }
 
@@ -147,12 +147,12 @@ class ExpProductList extends HTMLElement {
                         wishlist.splice(i, 1);
                     }
                 }
-                for(var i = 0 ; i< list.length ; i++){
-                    console.log("working")
-                    if(list[i].getAttribute('sur_name') == this.getAttribute('sur_name')){
-                        this.setAttribute('access', 0);
-                    }
-                }
+                // for(var i = 0 ; i< list.length ; i++){
+                //     console.log("working")
+                //     if(list[i].getAttribute('sur_name') == this.getAttribute('sur_name')){
+                //         this.setAttribute('access', 0);
+                //     }
+                // }
                 print();
             }
         })

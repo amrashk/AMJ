@@ -282,14 +282,12 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  
   z-index: 9999;
 }
 
 .navbar{
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  
   display: flex;
 }
 
@@ -407,6 +405,12 @@ nav ul :hover {
   background-size: contain;
   height: 100vh;
 }
+
+/* @media screen and (max-width: 700px){
+  .bg-pic{
+    min-height: ;
+  }
+} */
 .bg-pic {
   background-image: url(../assets/bg.jpg);
   background-size: cover;
