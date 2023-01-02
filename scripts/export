@@ -1,0 +1,9 @@
+// export { wishlist } from "../scripts/schols.js";
+     function some(name){
+        alert(name);
+        // for(var i = 0 ; i < wishlist.length ; i++){
+          // if(wishlist[i].sur_name == name){
+            // al,ert("found")
+          // }
+        // }
+      }

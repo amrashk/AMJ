@@ -68,6 +68,7 @@
         .then((snapshot)=>{
             snapshot.forEach(childSnapshot =>{
                 students.push(childSnapshot.val());
+                console.log(childSnapshot.val());
             });
                     for (var make in students) {
                             const filteredTour = students[make].filter(filter => filter.top);
@@ -78,10 +79,7 @@
                             }).reduce((p, c) => p + c, "")
                             );
                     }
-
-            
         })
-    
     }                
     window.onload=GetalldataOnce("articles_top");
   </script>

@@ -1,3 +1,4 @@
+
 //database begin 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
@@ -20,38 +21,53 @@
     const db = getDatabase();
     const gebi = id => document.getElementById(id);
 //database end
-//functions addto wishlist , removefrom withlist, then renderin in wishlist 
+
+// gettin datas from firebase db into students
 var wishlist = [];
-function addto(obj){
-    if(obj.access == 0){
-      obj.access = 1;
-      wishlist.push(obj);
-      reload("wishlist");
-    }else{
-      return
-    }
-}
-function reload(targetElement){
-        var array;
+var students = [];
+function GetalldataOnce(targetElement){
+    const dbref = ref(db);
+    get(child (dbref,  "schools"))
+    .then((snapshot)=>{
+        snapshot.forEach(childSnapshot =>{
+            students.push(childSnapshot.val());
+        });
+                for (var make in students) {
+                        const filteredTour = students[make].filter(filter => filter.top);
+                        console.log(filteredTour);
+                        gebi(targetElement).insertAdjacentHTML("afterbegin", filteredTour.map(map => {
+                            const _map = new surguuli(map);
+                            return _map.render();
+                            //  _map.connected?Callback();
+                            
+                            
+                        }).reduce((p, c) => p + c, "")
+                        );
+                }
+    })
+}   
+//functions addto wishlist , removefrom withlist, then renderin in wishlist 
+function reload(_targetElement){
+        var array ="a";
         for(var i = 0 ; i < wishlist.length ; i++){
-          array = array + convert(wishlist[i])
+          array = array + convert(wishlist[i]);
         }
-        document.getElementById("hello").innerHTML = array;
+        document.getElementById(_targetElement).innerHTML = array;
 }
-function convert(obj){
+function convert(_obj){
   return `
         <section>
             <div class="card">
                 <div class="thumb"></div>
                 <div class="infos">
-                <h2 class="titles"> ${this.sur_name}<span class="flag"></span></h2>
-                <h3 class="date">Rank: ${this.rank}</h3>
+                <h2 class="titles"> ${_obj.sur_name}<span class="flag"></span></h2>
+                <h3 class="date">Rank: ${_obj.rank}</h3>
                 <p class="txt">
                     asdf
                 </p>
                 <div>
                     <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
-                    <button role="button" id="" class = "details" onclick="addto(${this.rank})">REMOVE</button>
+                    <button role="button" id="" class = "details" onclick="remove(${_obj.rank})">REMOVE</button>
                     <h3 class="details2">★</h3>
                 </div>
                 </div>
@@ -61,6 +77,7 @@ function convert(obj){
 //class of schools with btn that insertin to wishlist 
     class surguuli {
     constructor(ob) {
+        this.object = this;
         this.sur_name = ob.sur_name;
         this.students = ob.students;
         this.rank = ob.rank;
@@ -69,6 +86,7 @@ function convert(obj){
     }
 
     render() {
+        // alert("rendered")
         return `
         <section>
             <div class="card">
@@ -81,32 +99,31 @@ function convert(obj){
                 </p>
                 <div>
                     <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
-                    <button role="button" id="" class = "details" onclick="addto(${this})">more</button>
+                    <button id ="${this.sur_name}" class="details" onclick="some('${this.sur_name}')">readmore</button>
                     <h3 class="details2">★</h3>
                 </div>
                 </div>
             </div>
         </section> `;
     }
-};
-// gettin datas from firebase db into students
-    var students = [];
-    function GetalldataOnce(targetElement){
-        const dbref = ref(db);
-        get(child (dbref,  "schools"))
-        .then((snapshot)=>{
-            snapshot.forEach(childSnapshot =>{
-                students.push(childSnapshot.val());
-            });
-                    for (var make in students) {
-                            const filteredTour = students[make].filter(filter => filter.top);
-                            console.log(filteredTour);
-                            gebi(targetElement).insertAdjacentHTML("afterbegin", filteredTour.map(map => {
-                                const _map = new surguuli(map);
-                                return _map.render();
-                            }).reduce((p, c) => p + c, "")
-                            );
-                    }
+    connectedCallback() {
+        document.querySelector("button").addEventListener("click", () => {
+            console.log("hi");
         })
-    }                
-    window.onload=GetalldataOnce("articles_top");
+    }
+    some(_obj){
+        for(var i = 0 ; i < wishlist.length ; i++){
+            if(wishlist[i].sur_name == name){
+              alert("found")
+            }
+          }
+    }  
+};
+function some(_obj){
+    for(var i = 0 ; i < wishlist.length ; i++){
+        if(wishlist[i].sur_name == name){
+          alert("found")
+        }
+      }
+}  
+window.onload=GetalldataOnce("articles_top");
