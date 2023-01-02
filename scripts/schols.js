@@ -1,5 +1,5 @@
-
-//database begin 
+    
+//database begin    
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
     const firebaseConfig = {
@@ -21,31 +21,51 @@
     const db = getDatabase();
     const gebi = id => document.getElementById(id);
 //database end
-
 // gettin datas from firebase db into students
-var wishlist = [];
+export  var wishlist = [];
+var list = [];
 var students = [];
 function GetalldataOnce(targetElement){
     const dbref = ref(db);
     get(child (dbref,  "schools"))
     .then((snapshot)=>{
+            var exp_ren  = "";
         snapshot.forEach(childSnapshot =>{
-            students.push(childSnapshot.val());
-        });
-                for (var make in students) {
-                        const filteredTour = students[make].filter(filter => filter.top);
-                        console.log(filteredTour);
-                        gebi(targetElement).insertAdjacentHTML("afterbegin", filteredTour.map(map => {
-                            const _map = new surguuli(map);
-                            return _map.render();
-                            //  _map.connected?Callback();
-                            
-                            
-                        }).reduce((p, c) => p + c, "")
-                        );
+                students.push(childSnapshot.val());
+                // console.log(childSnapshot.val());
+            })  
+            for (var make in students) {
+                const filteredTour =students[make].filter((filter) => filter.top == true);
+                console.log(filteredTour.length);
+                for(var  i = 0 ; i< filteredTour.length ; i++){
+                    if(filteredTour[i].top == true){
+                        var _map = new surguuli(filteredTour[i]);
+                        ;
+                        exp_ren = exp_ren +"<div>"+  _map.render()+ "</div>";
+                    }
                 }
+              }
+              exp_ren += "</div>"
+                console.log(list)
+              document.getElementById(targetElement).innerHTML = exp_ren;
     })
 }   
+function App(arr, target){
+    console.log("workins")
+    let exp_ren = "";
+    for(var  i = 0 ; i< arr.length ; i++){
+        console.log(arr.length)
+        if(arr[i].top == false){
+            console.log(arr[i]);
+            let exp = new Exp(element);
+            exp_ren+=exp.render();
+            document.querySelector(target).insertAdjacentHTML("afterbegin", exp_ren);
+        }
+    }
+  }
+window.onload=GetalldataOnce("articles_top");
+
+
 //functions addto wishlist , removefrom withlist, then renderin in wishlist 
 function reload(_targetElement){
         var array ="a";
@@ -53,26 +73,6 @@ function reload(_targetElement){
           array = array + convert(wishlist[i]);
         }
         document.getElementById(_targetElement).innerHTML = array;
-}
-function convert(_obj){
-  return `
-        <section>
-            <div class="card">
-                <div class="thumb"></div>
-                <div class="infos">
-                <h2 class="titles"> ${_obj.sur_name}<span class="flag"></span></h2>
-                <h3 class="date">Rank: ${_obj.rank}</h3>
-                <p class="txt">
-                    asdf
-                </p>
-                <div>
-                    <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
-                    <button role="button" id="" class = "details" onclick="remove(${_obj.rank})">REMOVE</button>
-                    <h3 class="details2">★</h3>
-                </div>
-                </div>
-            </div>
-        </section> `
 }
 //class of schools with btn that insertin to wishlist 
     class surguuli {
@@ -83,47 +83,88 @@ function convert(_obj){
         this.rank = ob.rank;
         this.place = ob.place;
         this.access = 0;
-    }
+        this.render = ()=>{
+            return `
+        <exp-product-list 
+            sur_name = "${this.sur_name}"
+            rank = "${this.rank}" 
+            access = "${this.access}" 
+        </exp-product-list>
+        `;
+        }
 
-    render() {
-        // alert("rendered")
-        return `
-        <section>
-            <div class="card">
+    }
+};
+class ExpProductList extends HTMLElement {
+    constructor() {
+      super(); // always call super() first in the ctor.
+      this.innerHTML = 
+      ` 
+          <section>
+            <div class="">
                 <div class="thumb"></div>
                 <div class="infos">
-                <h2 class="titles"> ${this.sur_name}<span class="flag"></span></h2>
-                <h3 class="date">Rank: ${this.rank}</h3>
-                <p class="txt">
-                    asdf
-                </p>
+                <h2 class="titles">${this.getAttribute('sur_name')}<span class="flag"></span></h2>
                 <div>
-                    <h3 class="details2">ДЭЛГЭРЭНГҮЙ</h3>
-                    <button id ="${this.sur_name}" class="details" onclick="some('${this.sur_name}')">readmore</button>
-                    <h3 class="details2">★</h3>
+                    <button role="button" class="details2">★</button>
                 </div>
                 </div>
             </div>
-        </section> `;
+        </section> 
+      `;
+
+//       <section>
+//       <div class="card">
+//           <div class="thumb"></div>
+//           <div class="infos">
+//           <h2 class="titles">${this.getAttribute('sur_name')}<span class="flag"></span></h2>
+//           <h3 class="date">Rank: ${this.getAttribute('rank')}</h3>
+//           <p class="txt">
+//               asdf
+//           </p>
+//           <div>
+//               <button role="button" class="details2">★</button>
+//               <h3 class="details" button>readmore</h3>
+//           </div>
+//           </div>
+//       </div>
+//   </section> 
+
     }
     connectedCallback() {
-        document.querySelector("button").addEventListener("click", () => {
-            console.log("hi");
+        this.querySelector("button").addEventListener("click", () => {
+            var k = 0;
+            for(var i = 0 ; i< wishlist.length ; i++){
+                if(wishlist[i].getAttribute('sur_name') == this.getAttribute('sur_name')){
+                    return
+                }
+                k=1;
+            }
+            
+                wishlist.push(this);
+                console.log(wishlist);
+                
+                print();
+            
+            
         })
     }
-    some(_obj){
-        for(var i = 0 ; i < wishlist.length ; i++){
-            if(wishlist[i].sur_name == name){
-              alert("found")
-            }
-          }
-    }  
-};
-function some(_obj){
+    disconnectedCallback() {
+      
+      console.log("connectedCallback")
+    }
+    attributeChangedCallback(attrName, oldVal, newVal) {
+  
+    }
+  }
+function print(){
+    var array="";
     for(var i = 0 ; i < wishlist.length ; i++){
-        if(wishlist[i].sur_name == name){
-          alert("found")
-        }
-      }
-}  
-window.onload=GetalldataOnce("articles_top");
+        // console.log(wishlist[i].outerHTML)    
+        // console.log(wishlist[i].sur_name)
+       array = array + wishlist[i].outerHTML;
+    }
+    // console.log(array)
+    document.getElementById("hello").innerHTML = array;
+}
+  window.customElements.define('exp-product-list', ExpProductList);
