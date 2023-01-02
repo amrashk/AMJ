@@ -23,13 +23,14 @@
 //database end
 // gettin datas from firebase db into students
 export  var wishlist = [];
-var list = [];
+export var list = [];
 var students = [];
 function GetalldataOnce(targetElement){
     const dbref = ref(db);
     get(child (dbref,  "schools"))
     .then((snapshot)=>{
             var exp_ren  = "";
+            
         snapshot.forEach(childSnapshot =>{
                 students.push(childSnapshot.val());
                 // console.log(childSnapshot.val());
@@ -40,14 +41,15 @@ function GetalldataOnce(targetElement){
                 for(var  i = 0 ; i< filteredTour.length ; i++){
                     if(filteredTour[i].top == true){
                         var _map = new surguuli(filteredTour[i]);
-                        ;
+                        list.push("<div>"+  _map.render()+ "</div>");
                         exp_ren = exp_ren +"<div>"+  _map.render()+ "</div>";
                     }
                 }
               }
-              exp_ren += "</div>"
+              printlist();
+            //   exp_ren += "</div>"
                 console.log(list)
-              document.getElementById(targetElement).innerHTML = exp_ren;
+            //   document.getElementById(targetElement).innerHTML = exp_ren;
     })
 }   
 function App(arr, target){
@@ -77,7 +79,6 @@ function reload(_targetElement){
 //class of schools with btn that insertin to wishlist 
     class surguuli {
     constructor(ob) {
-        this.object = this;
         this.sur_name = ob.sur_name;
         this.students = ob.students;
         this.rank = ob.rank;
@@ -133,20 +134,27 @@ class ExpProductList extends HTMLElement {
     }
     connectedCallback() {
         this.querySelector("button").addEventListener("click", () => {
-            var k = 0;
-            for(var i = 0 ; i< wishlist.length ; i++){
-                if(wishlist[i].getAttribute('sur_name') == this.getAttribute('sur_name')){
-                    return
-                }
-                k=1;
-            }
-            
+            if(this.getAttribute('access') == 0){
+                this.setAttribute('access', 1);
                 wishlist.push(this);
-                console.log(wishlist);
-                
+                console.log(wishlist)
                 print();
-            
-            
+            }else if (this.getAttribute('access') == 1){
+                this.setAttribute('access', 0);
+                // wishlist.pop(this);
+                for(var i = 0 ; i< wishlist.length ; i++){
+                    if(wishlist[i].getAttribute('sur_name') == this.getAttribute('sur_name')){
+                        wishlist.splice(i, 1);
+                    }
+                }
+                for(var i = 0 ; i< list.length ; i++){
+                    console.log("working")
+                    if(list[i].getAttribute('sur_name') == this.getAttribute('sur_name')){
+                        this.setAttribute('access', 0);
+                    }
+                }
+                print();
+            }
         })
     }
     disconnectedCallback() {
@@ -157,14 +165,18 @@ class ExpProductList extends HTMLElement {
   
     }
   }
+function printlist(){
+    var array="";
+    for(var i = 0 ; i < list.length ; i++){
+       array = array + list[i].outerHTML;
+    }
+    document.getElementById("articles_top").innerHTML = array;
+}
 function print(){
     var array="";
     for(var i = 0 ; i < wishlist.length ; i++){
-        // console.log(wishlist[i].outerHTML)    
-        // console.log(wishlist[i].sur_name)
        array = array + wishlist[i].outerHTML;
     }
-    // console.log(array)
     document.getElementById("hello").innerHTML = array;
 }
   window.customElements.define('exp-product-list', ExpProductList);
