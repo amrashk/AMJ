@@ -1,62 +1,85 @@
 {
-    "schools": {
-      "Korea": [
-        {   
-            "c_name": "Korea",
-            "rank": "9",
-            "top" : "false",
-            "details" : "Олон улсын оюутны хувьд АНУ нь дэлхийн хамгийн нэр хүндтэй, өндөр түвшиний дээд боловсролын системүүдийн нэг, эклектик хотууд, байгалийн үзэсгэлэнт цэцэрлэгт хүрээлэн, соёл, түүх, маш олон ..."
-        },
-        {
-          "sur_name": "Hanseo University",
-          "students": "1000",
-          "rank": "689",
-          "place": "Sosan",
-          "top": true
-        },
-        {
-          "sur_name": "Hanseo University",
-          "students": "1000",
-          "rank": "689",
-          "place": "Sosan",
-          "top": true
-        },
-        {
-          "sur_name": "Hanseo University",
-          "students": "1000",
-          "rank": "689",
-          "place": "Sosan",
-          "top": true
-        },
-        {
-          "sur_name": "Hanseo University",
-          "students": "1000",
-          "rank": "689",
-          "place": "Sosan",
-          "top": true
-        }
-      ],
-      "USA": [
-        {   
-            "c_name": "Америкийн  Нэгдсэн Улс",
-            "rank": "1",
-            "top" : "false",
-            "details" : "Олон улсын оюутны хувьд АНУ нь дэлхийн хамгийн нэр хүндтэй, өндөр түвшиний дээд боловсролын системүүдийн нэг, эклектик хотууд, байгалийн үзэсгэлэнт цэцэрлэгт хүрээлэн, соёл, түүх, маш олон ..."
-        },
-        {
-          "sur_name": "Charles Sturt University",
-          "students": "899",
-          "rank": "678",
-          "place": "Ohio",
-          "top": true
-        },
-        {
-          "sur_name": "Charles Sturt University",
-          "students": "899",
-          "rank": "678",
-          "place": "Ohio",
-          "top": true
-        }
-      ]
-    }
+  "schools": {
+    "Korea": [
+      {
+        "c_name": "Korea",
+        "rank": "9",
+        "id": "Korea",
+        "top": false,
+        "details": "Олон улсын оюутны хувьд АНУ нь дэлхийн хамгийн нэр хүндтэй, өндөр түвшиний дээд боловсролын системүүдийн нэг, эклектик хотууд, байгалийн үзэсгэлэнт цэцэрлэгт хүрээлэн, соёл, түүх, маш олон ..."
+      },
+      {
+        "school_name": "Hanseo University",
+        "students": "1000",
+        "rank": "689",
+        "place": "Sosan",
+        "sur_logo": "",
+        "sur_img": "",
+        "images": [
+          "",
+          "",
+          ""
+        ],
+        "pros": [
+          "",
+          ""
+        ],
+        "helni_beltgel": [],
+        "bachelor": [
+          ""
+        ],
+        "master": [
+          ""
+        ],
+        "doctor": [
+          ""
+        ],
+        "top": true
+      },
+      {
+        "school_name": "Hanseo University",
+        "students": "1000",
+        "rank": "689",
+        "place": "Sosan",
+        "top": true
+      },
+      {
+        "school_name": "Hanseo University",
+        "students": "1000",
+        "rank": "689",
+        "place": "Sosan",
+        "top": true
+      },
+      {
+        "school_name": "Hanseo University",
+        "students": "1000",
+        "rank": "689",
+        "place": "Sosan",
+        "top": true
+      }
+    ],
+    "USA": [
+      {
+        "c_name": "Америкийн  Нэгдсэн Улс",
+        "rank": "1",
+        "id": "USA",
+        "top": false,
+        "details": "Олон улсын оюутны хувьд АНУ нь дэлхийн хамгийн нэр хүндтэй, өндөр түвшиний дээд боловсролын системүүдийн нэг, эклектик хотууд, байгалийн үзэсгэлэнт цэцэрлэгт хүрээлэн, соёл, түүх, маш олон ..."
+      },
+      {
+        "school_name": "Charles Sturt University",
+        "students": "899",
+        "rank": "678",
+        "place": "Ohio",
+        "top": true
+      },
+      {
+        "school_name": "Charles Sturt University",
+        "students": "899",
+        "rank": "678",
+        "place": "Ohio",
+        "top": true
+      }
+    ]
   }
+}
