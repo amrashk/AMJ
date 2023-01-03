@@ -101,13 +101,18 @@ class ExpProductList extends HTMLElement {
       super(); // always call super() first in the ctor.
       this.innerHTML = 
       ` 
-          <section>
-            <div class="">
+            <section>
+            <div class="card">
                 <div class="thumb"></div>
                 <div class="infos">
                 <h2 class="titles">${this.getAttribute('sur_name')}<span class="flag"></span></h2>
+                <h3 class="date">Rank: ${this.getAttribute('rank')}</h3>
+                <p class="txt">
+                    asdf
+                </p>
                 <div>
                     <button role="button" class="details2">★</button>
+                    <h3 class="details" button>readmore</h3>
                 </div>
                 </div>
             </div>

@@ -64,23 +64,21 @@ class TopTour {
   }
 
   Download(targetElement, id) {
-    console.log(id);
+    // console.log(id);
     fetch(`${this._tourUrl}/latest`)
       .then((result) => {
         result.json().then((jsob) => {
           // filter
-
           const filteredTour = jsob.record.schools[id].filter(
             (filter) => filter.top
           );
-          console.log(filteredTour);
+          // console.log(filteredTour);
           gebi(targetElement).insertAdjacentHTML("afterbegin",filteredTour.map((map) => {
                 const _map = new Tour(map);
                 return _map.render();
               })
               .reduce((p, c) => p + c, "")
           );
-          // const filteredTour = jsob.record.schools.filter(filter => filter.top);
         });
       })
       .catch((error) => {
@@ -89,6 +87,7 @@ class TopTour {
       });
   }
 }
+//------------------------------------------------------------------------
 class country {
   constructor(ob) {
     this.c_name = ob.c_name;
@@ -99,22 +98,21 @@ class country {
 
   render() {
     return `
-    
-        <section>
-          
+    <div>
+        <section class="boxof">
             <div  class="modal" id="${this.rank}">
               <div  class="${this.rank}" >
-              <div class="modal-header">
-                <div class="title">${this.c_name}</div>
-                <button data-close-button class="close-button">&times;</button>
-              </div>
-              <div id="${this.c_name}">
-
-              </div>
+                <div class="modal-header">
+                  <div class="title">${this.c_name}</div>
+                  <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div id="${this.c_name}">
+                </div>
               </div>
             </div>   
-            <div class="card">
-                <div class="thumb"></div>
+            <div class="wrapper card">
+                <div class="thumb">
+                </div>
                 <div class="infos">
                 <h2 class="titles"> ${this.c_name}<span class="flag"></span></h2>
                 <h3 class="date">Rank: ${this.rank}</h3>
@@ -130,12 +128,12 @@ class country {
             </div>
          
         </section> 
-
+    </div>
         `;
   }
 }
 // ${tours.Download('modal-body' , this.id)}
-
+//------------------------------------------------------------------------
 const tours = new TopTour(
   "https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8"
 );
@@ -152,9 +150,10 @@ class countryies {
         result.json().then((jsob) => {
           // filter
           for (var make in jsob.record.schools) {
-            console.log(make);
+            console.log("1st make is = " + make);
             const filteredTour = jsob.record.schools[make].filter((filter) => filter.top == false);
-            console.log(filteredTour);
+            // console.log(filteredTour);
+            // console.log(filteredTour.length);
             gebi(targetElement).insertAdjacentHTML("afterbegin",filteredTour.map((map) => {
                   const _map = new country(map);
                   return _map.render();
@@ -162,32 +161,14 @@ class countryies {
                 .reduce((p, c) => p + c, "")
             );
           }
-          // const filteredTour = jsob.record.schools.filter(filter => filter.top);
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        console.log("error catch");
-      });
-      
-  }
-  popup(targetElement) {
-    fetch(`${this._tourUrl}/latest`)
-      .then((result) => {
-        result.json().then((jsob) => {
-          // filter
-          for (var make in jsob.record.schools) {
-            console.log(make);
-            const filteredTour = jsob.record.schools[make].filter((filter) => filter.top == false);
-            console.log(filteredTour);
+          for (var mak in jsob.record.schools) {
+            console.log("make is = " + mak);
+            const filteredTour = jsob.record.schools[mak].filter((filter) => filter.top == false);
             gebi(targetElement).insertAdjacentHTML("afterbegin",filteredTour.map((map) => {
-                  const _map = new country(map);
-                  return tours.Download(map.c_name , map.id);
+                    return tours.Download( map.c_name , map.id);
                 })
-                .reduce((p, c) => p + c, "")
             );
           }
-          // const filteredTour = jsob.record.schools.filter(filter => filter.top);
         });
       })
       .catch((error) => {
@@ -197,10 +178,9 @@ class countryies {
       
   }
 }
-
+//------------------------------------------------------------------------
 const gebi = (id) => document.getElementById(id);
 const countrs = new countryies(
   "https://api.jsonbin.io/v3/b/63a8496c01a72b59f238f0e8"
 );
 countrs.Download("articles_top");
-countrs.popup("articles_top");
