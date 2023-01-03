@@ -79,7 +79,7 @@ function reload(_targetElement){
 //class of schools with btn that insertin to wishlist 
     class surguuli {
     constructor(ob) {
-        this.sur_name = ob.sur_name;
+        this.school_name = ob.school_name;
         this.students = ob.students;
         this.rank = ob.rank;
         this.place = ob.place;
@@ -87,7 +87,7 @@ function reload(_targetElement){
         this.render = ()=>{
             return `
             <exp-product-list 
-                sur_name = "${this.sur_name}"
+                sur_name = "${this.school_name}"
                 rank = "${this.rank}" 
                 access = "${this.access}" 
             </exp-product-list>
