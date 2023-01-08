@@ -9,49 +9,28 @@
         "details": "Олон улсын оюутны хувьд АНУ нь дэлхийн хамгийн нэр хүндтэй, өндөр түвшиний дээд боловсролын системүүдийн нэг, эклектик хотууд, байгалийн үзэсгэлэнт цэцэрлэгт хүрээлэн, соёл, түүх, маш олон ..."
       },
       {
-        "school_name": "Hanseo University",
-        "students": "1000",
-        "rank": "689",
-        "place": "Sosan",
-        "sur_logo": "",
-        "sur_img": "",
-        "images": [
-          "",
-          "",
-          ""
-        ],
-        "pros": [
-          "",
-          ""
-        ],
-        "helni_beltgel": [],
-        "bachelor": [
-          ""
-        ],
-        "master": [
-          ""
-        ],
-        "doctor": [
-          ""
-        ],
-        "top": true
-      },
-      {
-        "school_name": "Hanseo University",
+        "sur_name": "Hanseo University_1",
         "students": "1000",
         "rank": "689",
         "place": "Sosan",
         "top": true
       },
       {
-        "school_name": "Hanseo University",
+        "sur_name": "Hanseo University_2",
         "students": "1000",
         "rank": "689",
         "place": "Sosan",
         "top": true
       },
       {
-        "school_name": "Hanseo University",
+        "sur_name": "Hanseo University_3",
+        "students": "1000",
+        "rank": "689",
+        "place": "Sosan",
+        "top": true
+      },
+      {
+        "sur_name": "Hanseo University_4",
         "students": "1000",
         "rank": "689",
         "place": "Sosan",
@@ -67,14 +46,14 @@
         "details": "Олон улсын оюутны хувьд АНУ нь дэлхийн хамгийн нэр хүндтэй, өндөр түвшиний дээд боловсролын системүүдийн нэг, эклектик хотууд, байгалийн үзэсгэлэнт цэцэрлэгт хүрээлэн, соёл, түүх, маш олон ..."
       },
       {
-        "school_name": "Charles Sturt University",
+        "sur_name": "Charles Sturt University_1",
         "students": "899",
         "rank": "678",
         "place": "Ohio",
         "top": true
       },
       {
-        "school_name": "Charles Sturt University",
+        "sur_name": "Charles Sturt University_2",
         "students": "899",
         "rank": "678",
         "place": "Ohio",
