@@ -1,5 +1,6 @@
     
 //database begin    
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
     const firebaseConfig = {
@@ -12,8 +13,8 @@
       appId: "1:133019365322:web:cb9be862557345fe19e933",
       measurementId: "G-ZPPMSZPRBT"
     };
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    const appp = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(appp);
 
     import {getDatabase , ref, child , onValue , get}
     from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
@@ -24,7 +25,7 @@
 // gettin datas from firebase db into students
 export  var wishlist = [];
 export var list = [];
-var students = [];
+var students = [];  
 function GetalldataOnce(targetElement){
     const dbref = ref(db);
     get(child (dbref,  "schools"))
@@ -33,11 +34,11 @@ function GetalldataOnce(targetElement){
             
         snapshot.forEach(childSnapshot =>{
                 students.push(childSnapshot.val());
-                console.log(childSnapshot.val());
+                // console.log(childSnapshot.val());
             })  
             for (var make in students) {
                 const filteredTour =students[make].filter((filter) => filter.top == true);
-                console.log(filteredTour.length);
+                // console.log(filteredTour.length);
                 for(var  i = 0 ; i< filteredTour.length ; i++){
                     if(filteredTour[i].top == true){
                         var _map = new surguuli(filteredTour[i]);
@@ -48,7 +49,7 @@ function GetalldataOnce(targetElement){
               }
             //   printlist();
               exp_ren += "</div>"
-                console.log(list)
+                // console.log(list)
               document.getElementById(targetElement).innerHTML = exp_ren;
     })
 }   
@@ -65,7 +66,6 @@ function App(arr, target){
         }
     }
   }
-window.onload=GetalldataOnce("articles_top");
 
 
 //functions addto wishlist , removefrom withlist, then renderin in wishlist 
@@ -184,4 +184,5 @@ function print(){
     }
     document.getElementById("hello").innerHTML = array;
 }
-  window.customElements.define('exp-product-list', ExpProductList);
+window.customElements.define('exp-product-list', ExpProductList);
+window.onload=GetalldataOnce("articles_top");
